@@ -5,7 +5,7 @@ const nav = document.querySelector("header nav ul");
 const openNav = document.querySelector("header .hamburger");
 const closeNav = document.querySelector("header .close");
 
-// add style to header when scrollin
+// add style to header and change color to mobile navigation when scrolling
 
 window.addEventListener("scroll", fixedNavigationStyle);
 
@@ -13,8 +13,10 @@ function fixedNavigationStyle() {
   const heroHeight = heroSection.clientHeight;
   if (scrollY >= heroHeight / 3) {
     header.classList.add("fixed");
+    nav.style.backgroundColor = "white";
   } else {
     header.classList.remove("fixed");
+    nav.style.backgroundColor = "#272524";
   }
 }
 
@@ -40,7 +42,7 @@ closeNav.addEventListener("click", () => {
 function showmobileNav() {
   nav.classList.add("show");
   if (header.classList.contains("fixed")) {
-    nav.style.cssText = "top: 135%; background-color: white;";
+    nav.style.cssText = "top: 120%; background-color: white;";
   } else {
     nav.style.cssText = "top: 100%; background-color: #272524";
   }
